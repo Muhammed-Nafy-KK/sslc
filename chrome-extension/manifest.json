@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Study Journal Focus Guard",
+  "version": "1.0.0",
+  "description": "Enforces the approved study website allowlist during a Study Journal focus session.",
+  "permissions": ["declarativeNetRequest", "storage", "alarms"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "service-worker.js" },
+  "content_scripts": [{ "matches": ["http://*/*", "https://*/*"], "js": ["content.js"], "run_at": "document_start" }]
+}
